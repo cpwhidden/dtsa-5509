@@ -474,9 +474,8 @@ rate of boosted population also rapidly grew.</p>
 </div>
 <div id="models" class="section level2">
 <h2>Models</h2>
-<p>Predict cases, hospitalizations, and deaths 14 days in the future
-using the past 14 days of cases, plus the current day’s vaccination and
-boosted rate.</p>
+<p>Predict deaths 4 weeks in the future using the past 8 weeks of cases,
+plus the current day’s vaccination and boosted rate.</p>
 <pre class="r"><code>dataset &lt;- covid %&gt;%
   filter(`Age Group` == &#39;All&#39;) %&gt;%
   mutate(`Total Population` = coalesce(`Population Unvaccinated`,0) + coalesce(`Population Vaccinated`,0) + coalesce(`Population Boosted`,0)) %&gt;%
